@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXON — AI Consulting & Integration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          keyframes: {
+            gridMove: { '0%': { transform: 'translateY(0)' }, '100%': { transform: 'translateY(60px)' } },
+          },
+          animation: { 'grid-move': 'gridMove 20s linear infinite' },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; }
+    .grid-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .grid-lines { position: absolute; inset: -60px 0 0 0; background-image: linear-gradient(to right, rgba(0,0,0,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.045) 1px, transparent 1px); background-size: 60px 60px; animation: gridMove 20s linear infinite; }
+    .grid-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 80%, rgba(255,255,255,1) 100%); }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+    .nav-glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.9); }
+    @keyframes gridMove { 0% { transform: translateY(0); } 100% { transform: translateY(60px); } }
+  </style>
+</head>
+<body class="bg-white text-[#0f0f0f] font-sans">
+  <nav class="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-black/8">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-black tracking-tight">AXON</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#services" class="hover:text-black transition-colors">Services</a>
+        <a href="#how" class="hover:text-black transition-colors">How It Works</a>
+        <a href="#about" class="hover:text-black transition-colors">About</a>
+        <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+      </div>
+      <a href="#contact" class="bg-black text-white text-sm font-semibold px-5 py-2.5 rounded-full">Book a Call →</a>
+    </div>
+  </nav>
+  <section class="relative min-h-screen flex flex-col items-center justify-center pt-16 px-6 overflow-hidden">
+    <div class="grid-bg"><div class="grid-lines"></div><div class="grid-fade"></div></div>
+    <div class="relative z-10 text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-black/5 border border-black/10 rounded-full px-4 py-1.5 text-xs font-medium text-gray-600 mb-8">
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span>
+        Now onboarding new clients — 2026
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight mb-6">We Build AI<br /><span class="text-black">Into Your</span><br />Business.</h1>
+      <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl mx-auto mb-10 leading-relaxed">Strategy. Integration. Results.<br />We help companies implement AI that actually works.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#contact" class="bg-black text-white font-semibold px-8 py-4 rounded-full text-sm">Book a Free Consultation →</a>
+        <a href="#services" class="border border-black/20 text-black font-semibold px-8 py-4 rounded-full text-sm">See Our Services</a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs">
+      <div class="w-px h-8 bg-gradient-to-b from-transparent to-gray-300"></div>Scroll
+    </div>
+  </section>
+  <section class="border-y border-black/8 py-10 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-xs font-medium text-gray-400 uppercase tracking-widest mb-8">Trusted by forward-thinking businesses</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-40">
+        <span class="text-lg font-black">Meridian</span><span class="text-lg font-black">Vanta Co.</span><span class="text-lg font-black">Corex</span><span class="text-lg font-black">Novalux</span><span class="text-lg font-black">Stratos</span><span class="text-lg font-black">Pulsed</span>
+      </div>
+    </div>
+  </section>
+  <section id="services" class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-16"><p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">What We Do</p><h2 class="text-4xl md:text-5xl font-black leading-tight max-w-lg">Everything you need to go AI-first.</h2></div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="reveal card-hover bg-[#f9fafb] border border-black/8 rounded-2xl p-8">
+          <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-6"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+          <h3 class="text-xl font-bold mb-3">AI Strategy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We audit your business, identify the highest-leverage AI opportunities, and build a roadmap that delivers ROI — not just hype.</p>
+        </div>
+        <div class="reveal card-hover bg-[#f9fafb] border border-black/8 rounded-2xl p-8">
+          <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-6"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+          <h3 class="text-xl font-bold mb-3">Custom Integration</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We integrate AI tools and models directly into your existing workflows, software, and teams — seamlessly, without disruption.</p>
+        </div>
+        <div class="reveal card-hover bg-[#f9fafb] border border-black/8 rounded-2xl p-8">
+          <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center mb-6"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3 class="text-xl font-bold mb-3">Process Automation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Eliminate repetitive tasks, cut operational costs, and free your team to focus on work that actually moves the needle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="how" class="py-28 px-6 bg-[#f9fafb] border-y border-black/8">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-16"><p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">The Process</p><h2 class="text-4xl md:text-5xl font-black leading-tight max-w-lg">From zero to AI-powered in 30 days.</h2></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal"><div class="text-6xl font-black text-black/10 mb-4">01</div><div class="w-8 h-px bg-black mb-5"></div><h3 class="text-lg font-bold mb-2">Audit & Discover</h3><p class="text-gray-500 text-sm leading-relaxed">We spend the first week inside your business — understanding your operations, bottlenecks, and goals.</p></div>
+        <div class="reveal"><div class="text-6xl font-black text-black/10 mb-4">02</div><div class="w-8 h-px bg-black mb-5"></div><h3 class="text-lg font-bold mb-2">Build & Integrate</h3><p class="text-gray-500 text-sm leading-relaxed">We build, configure, and integrate the right AI solutions. Custom-fit to your stack, your team, your workflows.</p></div>
+        <div class="reveal"><div class="text-6xl font-black text-black/10 mb-4">03</div><div class="w-8 h-px bg-black mb-5"></div><h3 class="text-lg font-bold mb-2">Scale & Optimize</h3><p class="text-gray-500 text-sm leading-relaxed">We stay with you post-launch — tracking performance, iterating, and scaling what works.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="text-5xl font-black mb-2">50+</div><div class="text-sm text-gray-500">Businesses transformed</div></div>
+        <div><div class="text-5xl font-black mb-2">3×</div><div class="text-sm text-gray-500">Average ROI in year one</div></div>
+        <div><div class="text-5xl font-black mb-2">30</div><div class="text-sm text-gray-500">Days to first deployment</div></div>
+        <div><div class="text-5xl font-black mb-2">100%</div><div class="text-sm text-gray-500">Client retention rate</div></div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="py-28 px-6 border-t border-black/8">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="reveal"><p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">About AXON</p><h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">We're not an agency.<br />We're your AI team.</h2><p class="text-gray-500 leading-relaxed mb-6">AXON was built by operators, engineers, and strategists who got tired of watching businesses fall behind because AI felt too complex or too risky.</p><p class="text-gray-500 leading-relaxed">We make it simple. We do the heavy lifting. You get the results.</p></div>
+      <div class="reveal grid grid-cols-2 gap-4">
+        <div class="bg-black text-white rounded-2xl p-6"><div class="text-3xl font-black mb-2">Fast</div><p class="text-white/60 text-sm">Live in weeks, not months.</p></div>
+        <div class="bg-[#f9fafb] border border-black/8 rounded-2xl p-6"><div class="text-3xl font-black mb-2">Clear</div><p class="text-gray-500 text-sm">No jargon. No fluff.</p></div>
+        <div class="bg-[#f9fafb] border border-black/8 rounded-2xl p-6"><div class="text-3xl font-black mb-2">Proven</div><p class="text-gray-500 text-sm">Real results, real clients.</p></div>
+        <div class="bg-black text-white rounded-2xl p-6"><div class="text-3xl font-black mb-2">Yours</div><p class="text-white/60 text-sm">Built for your business.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-28 px-6 bg-black text-white">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-6">Get Started</p>
+      <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6">Ready to bring AI<br />into your business?</h2>
+      <p class="text-white/50 text-lg mb-10 max-w-md mx-auto">Let's talk. First consultation is free — no pressure, no commitment.</p>
+      <a href="#" class="inline-block bg-white text-black font-bold px-10 py-4 rounded-full text-sm">Book Your Free Call →</a>
+    </div>
+  </section>
+  <footer class="border-t border-white/10 bg-black text-white/40 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <span class="font-black text-white text-base">AXON</span>
+      <div class="flex gap-8"><a href="#services" class="hover:text-white">Services</a><a href="#how" class="hover:text-white">Process</a><a href="#about" class="hover:text-white">About</a><a href="#contact" class="hover:text-white">Contact</a></div>
+      <span>© 2026 AXON. All rights reserved.</span>
+    </div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => { entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); }); }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
